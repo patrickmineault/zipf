@@ -35,7 +35,7 @@ def _clean_gutenberg_text(text):
     end_pos = text.find(end_fence)
 
     # Check that the fences are at reasonable positions within the text.
-    assert 0.000001 < start_pos / len(text) <= 0.05
+    assert 0.000001 < start_pos / len(text) <= 0.1
     assert 0.9 < end_pos / len(text) <= 1.0
 
     return text[start_pos:end_pos]
