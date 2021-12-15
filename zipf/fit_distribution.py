@@ -17,11 +17,9 @@ def compute_summary(word_counts):
     Compute summary stats for the word count distribution.
     """
     wc = np.array(list(word_counts.values()))
-    return {
-        "total_words": wc.sum(),
-        "distinct_words": len(wc),
-        "alpha": estimate_zipf(wc),
-    }
+    alpha, C = estimate_zipf(wc)
+
+    return {"total_words": wc.sum(), "distinct_words": len(wc), "alpha": alpha, "C": C}
 
 
 def estimate_zipf(word_counts):
@@ -52,7 +50,12 @@ def estimate_zipf(word_counts):
     )
     beta = mle.x
     alpha = 1 / (beta - 1)
-    return alpha
+
+    # Estimate the constant C so that this distribution integrates to 1.
+    # https://en.wikipedia.org/wiki/Zipf%27s_law
+    C = ((np.arange(len(word_counts)) + 1) ** (-alpha)).sum()
+
+    return alpha, C
 
 
 def _nlog_likelihood(beta, counts):
