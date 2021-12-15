@@ -16,6 +16,6 @@ def test_alpha():
     """
     max_freq = 600
     counts = np.floor(max_freq / np.arange(1, max_freq + 1))
-    actual_alpha = estimate_zipf(counts)
+    actual_alpha, _ = estimate_zipf(counts)
     expected_alpha = pytest.approx(1.0, abs=0.01)
     assert actual_alpha == expected_alpha
