@@ -38,7 +38,8 @@ def main(args):
         summary["name"] = p.stem
         summaries.append(summary)
 
-    pd.DataFrame(summaries).to_csv(pathlib.Path(args.out_folder) / "summary.csv")
+    df = pd.DataFrame(summaries)
+    df.set_index("name").to_csv(pathlib.Path(args.out_folder) / "summary.csv")
 
 
 if __name__ == "__main__":
