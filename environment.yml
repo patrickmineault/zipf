@@ -1,0 +1,16 @@
+name: zipf
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy=1.20.3=py38hf144106_0
+  - numpy-base=1.20.3=py38h74d4b33_0
+  - pandas=1.3.2=py38h8c16a72_0
+  - pango=1.42.4=h7062337_4
+  - pillow=8.3.1=py38h2c7a002_0
+  - pip=21.0.1=py38h06a4308_0
+  - scikit-learn=0.24.2=py38ha9443f7_0
+  - scipy=1.6.2=py38had2a1c9_1
+  - seaborn=0.11.2=pyhd3eb1b0_0
+  - setuptools=52.0.0=py38h06a4308_0
+  - six=1.16.0=pyhd3eb1b0_0
