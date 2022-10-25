@@ -22,7 +22,11 @@ The project is organized into folders:
 
 ## Running the analysis
 
-`cd` into the scripts folder and run `run_analysis.py`. You can then load up `visualize_results.ipynb` in jupyter to visualize the results.
+`cd` into the scripts folder and run `run_analysis.py` via:
+
+`python run_analysis.py --in_folder ../data --out_folder ../results`
+
+You can then load up `visualize_results.ipynb` in jupyter to visualize the results.
 
 ## Running tests
 
